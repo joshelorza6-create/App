@@ -1,0 +1,19 @@
+﻿{
+  "name": "oso-odds-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Oso Odds web app",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

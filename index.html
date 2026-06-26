@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oso Odds</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <button class="brand" data-view="home" aria-label="Oso Odds Home">
+          <span class="bear-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img">
+              <path class="bear-face" d="M8 25 14 11l11 7h14l11-7 6 14-4 18-10 12H22L12 43 8 25Z"></path>
+              <path class="bear-muzzle" d="M21 39c4-8 18-8 22 0l-5 11H26l-5-11Z"></path>
+              <path class="bear-brow" d="m19 30 10 3-1 4-11-4Zm26 0-10 3 1 4 11-4Z"></path>
+              <circle class="bear-eye" cx="25" cy="36" r="2.6"></circle>
+              <circle class="bear-eye" cx="39" cy="36" r="2.6"></circle>
+              <path class="bear-nose" d="M27 43c0-4 10-4 10 0 0 5-10 5-10 0Z"></path>
+              <path class="bear-mouth" d="M31 49h2l4 4H27l4-4Z"></path>
+            </svg>
+          </span>
+          <span>
+            <strong>OSO ODDS</strong>
+            <small>Analytics Terminal</small>
+          </span>
+        </button>
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="home">Home</button>
+          <button class="nav-item" data-view="live">Live Player Stats</button>
+          <button class="nav-item" data-view="sports">Sports</button>
+          <button class="nav-item" data-view="team">Teams</button>
+          <button class="nav-item" data-view="pulse">Market Pulse</button>
+          <button class="nav-item" data-view="trends">Trends</button>
+          <button class="nav-item" data-view="movement">Prop Line Changes</button>
+        </nav>
+        <div class="risk-panel">
+          <span class="status-dot status-green"></span>
+          <p>Informational analytics only. Bet at your own risk.</p>
+        </div>
+      </aside>
+
+      <main class="main-frame">
+        <header class="topbar">
+          <div class="topbar-title">
+            <span class="eyebrow">Live slate monitor</span>
+            <h1 id="view-title">Home</h1>
+          </div>
+          <div class="global-search-wrap">
+            <input id="global-search" class="global-search" type="search" placeholder="Search players or teams" autocomplete="off" />
+            <div id="global-search-results" class="global-search-results"></div>
+          </div>
+          <div class="topbar-actions">
+            <div class="live-pill"><span class="pulse"></span> LIVE</div>
+            <div class="profile-menu-wrap">
+              <button class="avatar-button" id="profile-button" aria-label="Open profile menu">JO</button>
+              <div class="profile-menu" id="profile-menu">
+                <button data-profile-action="profile">Profile</button>
+                <button data-profile-action="signout">Sign out</button>
+              </div>
+            </div>
+            <input id="avatar-upload" type="file" accept="image/*" hidden />
+          </div>
+        </header>
+
+        <section id="view-home" class="view active-view"></section>
+        <section id="view-live" class="view"></section>
+        <section id="view-sports" class="view"></section>
+        <section id="view-team" class="view"></section>
+        <section id="view-player" class="view"></section>
+        <section id="view-pulse" class="view"></section>
+        <section id="view-trends" class="view"></section>
+        <section id="view-movement" class="view"></section>
+        <section id="view-profile" class="view"></section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop active" id="welcome-modal">
+      <section class="welcome-modal" aria-labelledby="welcome-title" role="dialog" aria-modal="true">
+        <div class="welcome-bear">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Green bear logo">
+            <path class="bear-face" d="M8 25 14 11l11 7h14l11-7 6 14-4 18-10 12H22L12 43 8 25Z"></path>
+            <path class="bear-muzzle" d="M21 39c4-8 18-8 22 0l-5 11H26l-5-11Z"></path>
+            <path class="bear-brow" d="m19 30 10 3-1 4-11-4Zm26 0-10 3 1 4 11-4Z"></path>
+            <circle class="bear-eye" cx="25" cy="36" r="2.6"></circle>
+            <circle class="bear-eye" cx="39" cy="36" r="2.6"></circle>
+            <path class="bear-nose" d="M27 43c0-4 10-4 10 0 0 5-10 5-10 0Z"></path>
+            <path class="bear-mouth" d="M31 49h2l4 4H27l4-4Z"></path>
+          </svg>
+        </div>
+        <span class="eyebrow">Oso means bear</span>
+        <h2 id="welcome-title">OSO ODDS</h2>
+        <p class="welcome-copy">Bet Smarter. Bet Responsibly.</p>
+        <div class="agreement-box">
+          <strong>User Agreement</strong>
+          <p>
+            Oso Odds is an informational analytics tool. Projections, trends, scores, and value indicators
+            are not financial advice, guaranteed outcomes, or instructions to place a wager.
+          </p>
+          <p>You are responsible for your own decisions. Bet at your own risk and only where legal.</p>
+        </div>
+        <button class="primary-button" id="accept-agreement">Accept & Continue</button>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
